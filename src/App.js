@@ -30,6 +30,11 @@ const App = () =>   {
     setAuthorised(authed)
     navigate("/")
   }
+
+  const handleLogout = () => {
+    setAuthorised(false)
+    navigate("/")
+  }
   
   useEffect(() => {
     const checkIfLoggedIn = async () => {
@@ -44,7 +49,7 @@ const App = () =>   {
   return (
     <div className="App">
       <span>
-        <NavBar />
+        <NavBar handleLogout={handleLogout}/>
       </span>
       <header className="App-header">
         <Routes>
