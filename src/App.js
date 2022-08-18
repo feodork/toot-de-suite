@@ -1,5 +1,5 @@
 import { Routes, Route, NavLink, useNavigate } from 'react-router-dom'
-import React, { useState, useEffect, Component }  from 'react';
+import React, { useState, useEffect }  from 'react';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -53,12 +53,19 @@ const App = () =>   {
               <>
                 <Home />
                 <Map location={location} zoomLevel={12} />
+                <Register handleRegister={handleAuth} />
               </>
             }/>
 
             <Route path="/login" element={
               <>
                 <Login handleLogin={handleAuth} />
+              </>
+            } />
+
+            <Route path="/register" element={
+              <>
+                <Register handleRegister={handleAuth} />
               </>
             } />
 
