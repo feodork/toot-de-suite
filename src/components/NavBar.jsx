@@ -1,23 +1,38 @@
 import { Link, useParams } from 'react-router-dom'
 import React, { useEffect, Component } from 'react'
 
+import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
+
 const NavBar = () => {
     return (
-        <Navbar className="colour-nav">
-            <container>
-                <Navbar.Brand><img className="nav-img" src="/poop-emoji.png" />Toot de Suite</Navbar.Brand>
-                <Nav className="me-auto" />
-
-                <p>home</p>
-                <p>login</p>
-                <p>logout</p>
-                <p>register</p>
-            </container>
-        </Navbar>
+    <Navbar bg="light" expand="lg" className="colour-nav">
+      <Container>
+        <Navbar.Brand href="#home">
+            <img 
+            alt="poop emoji logo"
+            className="d-inline-block align-top nav-img" 
+            src="/poop-emoji.png" 
+            />{' '}
+            Toot de Suite
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#link">Login</Nav.Link>
+            <Nav.Link href="#link">Logout</Nav.Link>
+            <Nav.Link href="#link">Register</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
     )
 }
 
 export default NavBar
+
+
+

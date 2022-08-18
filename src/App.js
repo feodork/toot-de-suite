@@ -1,7 +1,6 @@
-import { Routes, Route, NavLink } from 'react-router-dom'
+import { Routes, Route, NavLink, useNavigate } from 'react-router-dom'
 import React, { Component }  from 'react';
 
-import logo from './logo.svg';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import './App.css';
@@ -11,25 +10,27 @@ import NavBar from './components/NavBar';
 import Map from './components/Map';
 
 const location = {
-  address: '1600 Amphitheatre Parkway, Mountain View, california.',
-  lat: 37.42216,
-  lng: -122.08427,
+  address: 'Uluru',
+  lat: -25.363,
+  lng: 131.044,
 }
 
 
 const App = () =>   {
+
+  const navigate = useNavigate()
+
   return (
     <div className="App">
       <span>
         <NavBar />
       </span>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <Routes>
             <Route path="/" element={
             <>
             <Home />
-            <Map location={location} zoomLevel={17} />
+            <Map location={location} zoomLevel={12} />
             </>
             }/>
         </Routes>
