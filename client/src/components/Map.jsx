@@ -1,8 +1,5 @@
-// https://stackoverflow.com/questions/67552020/how-to-fix-error-failed-to-compile-node-modules-react-leaflet-core-esm-pat
-// https://stackoverflow.com/questions/68016021/module-parse-failed-additional-babel-loader
-
 import React from 'react'
-import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
+import { MapContainer, TileLayer, useMap, Marker } from 'react-leaflet'
 
 import "leaflet/dist/leaflet.css"
 

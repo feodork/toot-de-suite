@@ -29,14 +29,22 @@ const App = () => {
   };
 
   useEffect(() => {
-    const checkIfLoggedIn = async () => {
-      const res = await fetch("/users/isauthorised");
+    const test = async () => {
+      const res = await fetch("/reviews");
       const data = await res.json();
-      console.log(data.msg);
-      setAuthorised(data.authorised);
-    };
-    checkIfLoggedIn();
+      console.log(data)
+    }
+    // const checkIfLoggedIn = async () => {
+    //   const res = await fetch("/users/isauthorised");
+    //   const data = await res.json();
+    //   console.log(data.msg);
+    //   setAuthorised(data.authorised);
+    // };
+    // checkIfLoggedIn();
+    test()
   }, []);
+  
+  
 
   return (
     <div className="App">
