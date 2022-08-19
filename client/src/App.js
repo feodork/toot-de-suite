@@ -30,7 +30,7 @@ const App = () => {
 
   useEffect(() => {
     const test = async () => {
-      const res = await fetch("/reviews");
+      const res = await fetch("/reviewers");
       const data = await res.json();
       console.log(data)
     }
