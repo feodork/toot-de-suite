@@ -29,3 +29,11 @@
   max-height: 60px;
 }
 
+.leaflet-container {
+  width: 50vw;
+  height: 100vh;
+
+}
+
+
+

@@ -1,33 +1,22 @@
+// https://stackoverflow.com/questions/67552020/how-to-fix-error-failed-to-compile-node-modules-react-leaflet-core-esm-pat
+// https://stackoverflow.com/questions/68016021/module-parse-failed-additional-babel-loader
+
 import React from 'react'
-import GoogleMapReact from 'google-map-react'
-import { Icon } from '@iconify/react'
-import locationIcon from '@iconify/icons-mdi/map-marker'
+import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
 
-import './Map.css';
+import "leaflet/dist/leaflet.css"
 
-const LocationPin = ({ text }) => (
-    <div className="pin">
-      <Icon icon={locationIcon} className="pin-icon" />
-      <p className="pin-text">{text}</p>
-    </div>
+const Map = () => {
+  return (
+      <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <Marker position={[51.505, -0.09]}>
+        </Marker>
+      </MapContainer>
   )
-
-const Map = ({ location, zoomLevel }) => (
-    <div className="map" style={{ height: '100%', width: '50vw' }}>  
-      <div className="google-map">
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: 'AIzaSyBD5RMWTWnEs2ZmpoSFBhdvayQghxxNaHs' }}
-          defaultCenter={location}
-          defaultZoom={zoomLevel}
-        >
-          <LocationPin
-            lat={location.lat}
-            lng={location.lng}
-            text={location.address}
-          />
-        </GoogleMapReact>
-      </div>
-    </div>
-  )
+}
 
 export default Map
