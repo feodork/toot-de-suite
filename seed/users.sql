@@ -1,5 +1,5 @@
-INSERT INTO users (name) VALUES ('sbernardin0');
-INSERT INTO users (name) VALUES ('wbrauner1');
-INSERT INTO users (name) VALUES ('ccurds2');
-INSERT INTO users (name) VALUES ('pwigsell3');
-INSERT INTO users (name) VALUES ('kmccullouch4');
+INSERT INTO users (username, password_hash) VALUES ('sbernardin0', '');
+INSERT INTO users (username, password_hash) VALUES ('wbrauner1', '');
+INSERT INTO users (username, password_hash) VALUES ('ccurds2', '');
+INSERT INTO users (username, password_hash) VALUES ('pwigsell3', '');
+INSERT INTO users (username, password_hash) VALUES ('kmccullouch4', '');

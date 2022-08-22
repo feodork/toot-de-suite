@@ -5,8 +5,8 @@ DROP TABLE IF EXISTS reviews CASCADE;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
-  name VARCHAR(100) UNIQUE NOT NULL,
-  password VARCHAR(100)
+  username VARCHAR(100) UNIQUE NOT NULL,
+  password_hash TEXT NOT NULL
 );
 
 CREATE TABLE toots (
