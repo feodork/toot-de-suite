@@ -12,9 +12,15 @@ CREATE TABLE users (
 CREATE TABLE toots (
   id SERIAL PRIMARY KEY,
   facilities_id INT,
-  gender TEXT,
+  toilet_name TEXT,
+  male BOOLEAN,
+  female BOOLEAN,
+  unisex BOOLEAN,
+  allgender BOOLEAN,
   open_hours TEXT,
-  accessible BOOLEAN
+  accessible BOOLEAN,
+  lat DOUBLE PRECISION,
+  lng DOUBLE PRECISION
 );
 
 CREATE TABLE reviews (

@@ -6,7 +6,6 @@ import "./App.css";
 
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
-import Map from "./components/Map";
 import Review from "./components/Review";
 import Login from "./components/Login";
 import Register from "./components/Register";
@@ -50,7 +49,6 @@ const App = () => {
             element={
               <>
                 <Home />
-                <Map />
                 <Register handleRegister={handleAuth} />
               </>
             }

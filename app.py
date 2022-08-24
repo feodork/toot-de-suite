@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, session, request, g
-
+import json
+import click
 from werkzeug.security import generate_password_hash
 import psycopg2
 import os
@@ -161,3 +162,52 @@ def is_authenticated():
         return jsonify(success=True, user=user)
     else:
         return jsonify(success=False, msg='User is not logged in')
+
+# GET retrieve toilet
+@app.route('/nearest')
+def get_nearest():
+    lat = float(request.args.get('lat'))
+    lng = float(request.args.get('lng'))
+    cur = g.db['cursor']
+    query = """
+        SELECT * FROM toots
+        WHERE lat > %s AND lat < %s AND lng > %s AND lng < %s
+    """
+    cur.execute(query, (lat - 0.01, lat + 0.01, lng - 0.01, lng + 0.01))
+    closest_toilets = cur.fetchall()
+    return jsonify(closest_toilets=closest_toilets)
+
+
+# take this and make it's own file and import into app.py to be able to run populate-toilets
+# when rerunnning this script, need to drop the existing database so no duplicates
+def toBoolean(arg):
+    return arg == 'True'
+
+def insert_one(toilet):
+    query = """
+        INSERT INTO toots
+        (facilities_id, toilet_name, male, female, unisex, allgender, open_hours, accessible, lat, lng)
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+    """
+    tuple = (int(toilet["FacilityID"]), toilet["Name"], toBoolean(toilet["Male"]), toBoolean(toilet["Female"]), toBoolean(toilet["Unisex"]), toBoolean(toilet["AllGender"]), toilet["OpeningHours"], toBoolean(toilet["Accessible"]), float(toilet["Latitude"]), float(toilet["Longitude"]))
+    g.db['cursor'].execute(query, tuple)
+    g.db['connection'].commit()
+
+@app.cli.command("populate-toilets")
+def populate_toilets():
+    get_db()
+    # Opening JSON file
+    f = open('toilet-data.json')
+    
+    # returns JSON object as 
+    # a dictionary
+    data = json.load(f)
+
+    # Iterating through the json list
+    for i, row in enumerate(data):
+        if i % 1000 == 0:
+            print("written", i)
+        insert_one(row)
+    
+    # Closing file
+    f.close()
