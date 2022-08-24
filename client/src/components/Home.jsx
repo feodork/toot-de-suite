@@ -10,8 +10,6 @@ const Home = () => {
   return (
     <>
       <div className="container home">
-        <h1>Toot de Suite</h1>
-        <h2>Find your closest toot</h2>
         <Search onGeocoded={(latLng) => setGeocoded(latLng)}/>
         <Map geocodedLatLng={geocoded}/>
       </div>

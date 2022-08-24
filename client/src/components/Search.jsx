@@ -1,3 +1,4 @@
+import Form from 'react-bootstrap/Form';
 import React from 'react';
 import PlacesAutocomplete, {
   geocodeByAddress,
@@ -31,10 +32,10 @@ class LocationSearchInput extends React.Component {
         searchOptions={{componentRestrictions: { country: ['au'] }}}
       >
         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-          <div>
-            <input
+          <Form>
+            <Form.Control
               {...getInputProps({
-                placeholder: 'Search Places ...',
+                placeholder: 'Type address to find your closest toot',
                 className: 'location-search-input',
               })}
             />
@@ -60,7 +61,7 @@ class LocationSearchInput extends React.Component {
                 );
               })}
             </div>
-          </div>
+          </Form>
         )}
       </PlacesAutocomplete>
     );

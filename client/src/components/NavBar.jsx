@@ -13,9 +13,10 @@ const NavBar = () => {
         <Navbar.Brand href="/">
             <img 
             alt="poop emoji logo"
-            className="d-inline-block align-top nav-img" 
+            className="d-inline-block nav-img" 
             src="/poop-emoji.png" 
             />{' '}
+            Toot de Suite
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

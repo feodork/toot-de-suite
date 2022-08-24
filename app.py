@@ -190,10 +190,10 @@ def toBoolean(arg):
 def insert_one(toilet):
     query = """
         INSERT INTO toots
-        (facilities_id, toilet_name, male, female, unisex, allgender, open_hours, accessible, lat, lng)
-        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+        (facilities_id, toilet_name, address1, town, state, male, female, unisex, allgender, open_hours, accessible, lat, lng)
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
     """
-    tuple = (int(toilet["FacilityID"]), toilet["Name"], toBoolean(toilet["Male"]), toBoolean(toilet["Female"]), toBoolean(toilet["Unisex"]), toBoolean(toilet["AllGender"]), toilet["OpeningHours"], toBoolean(toilet["Accessible"]), float(toilet["Latitude"]), float(toilet["Longitude"]))
+    tuple = (int(toilet["FacilityID"]), toilet["Name"], toilet["Address1"], toilet["Town"], toilet["State"], toBoolean(toilet["Male"]), toBoolean(toilet["Female"]), toBoolean(toilet["Unisex"]), toBoolean(toilet["AllGender"]), toilet["OpeningHours"], toBoolean(toilet["Accessible"]), float(toilet["Latitude"]), float(toilet["Longitude"]))
     g.db['cursor'].execute(query, tuple)
     g.db['connection'].commit()
 

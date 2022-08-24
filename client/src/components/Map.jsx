@@ -49,11 +49,12 @@ const Map = ({ geocodedLatLng }) => {
           icon={icon}>
             <Popup position={[toot.lat, toot.lng]}>
               <div>
-                <h3>{toot.Name}</h3>
-                <p>{toot.OpeningHours}</p>
-                <p>{toot.Address1}, {toot.Town} {toot.State}</p>
-                <p>Men: {toot.Male} Women: {toot.Female} Unisex {toot.Unisex} All Gender: {toot.AllGender}</p>
-                <p>Accessible: {toot.Accessible}</p>
+                <h5>{toot.toilet_name}</h5>
+                <p>{toot.open_hours}</p>
+                <p>{toot.address1}, {toot.town} {toot.state}</p>
+                <p>{`Men: ${toot.male} Women: ${toot.female}`}</p>
+                <p>{`Unisex ${toot.unisex} All Gender: ${toot.allgender}`}</p>
+                <p>{`Accessible: ${toot.accessible}`}</p>
               </div>
             </Popup>
           </Marker>
