@@ -6,36 +6,32 @@ import "./App.css";
 
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
-import Review from "./components/Review";
+import CreateReview from "./components/CreateReview";
+// import ShowReview from "./components/ShowReview";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Logout from "./components/Logout";
 
 
 const App = () => {
-  const [authorised, setAuthorised] = useState(null);
-  
-  const navigate = useNavigate();
-
-  const handleAuth = (authed) => {
-    setAuthorised(authed);
-    navigate("/");
-  };
-
-  const handleLogout = () => {
-    setAuthorised(false);
-    navigate("/");
-  };
+  const [user, setUser] = useState(null)
 
   useEffect(() => {
-    const checkIfLoggedIn = async () => {
-      const res = await fetch("/users/isauthorised");
-      const data = await res.json();
-      console.log(data.msg);
-      setAuthorised(data.authorised);
-    };
-    checkIfLoggedIn();
-  }, []);
+    const checkLoggedIn = async () => {
+      const res = await fetch('/is-authenticated')
+      const data = await res.json()
+      setUser(data.user)
+    }
+    if (!user) checkLoggedIn()
+  }, [])
+
+  const handleLogout = async () => {
+    const res = await fetch('/logout', {
+      method: 'POST'
+    })
+    const data = await res.json()
+    if (data.success) setUser(null)
+  }
   
   return (
     <div className="App">
@@ -49,7 +45,7 @@ const App = () => {
             element={
               <>
                 <Home />
-                <Register handleRegister={handleAuth} />
+                <Register  />
               </>
             }
           />
@@ -58,7 +54,7 @@ const App = () => {
             path="/login"
             element={
               <>
-                <Login handleLogin={handleAuth} />
+                <Login />
               </>
             }
           />
@@ -67,16 +63,23 @@ const App = () => {
             path="/register"
             element={
               <>
-                <Register handleRegister={handleAuth} />
+                <Register  />
               </>
             }
           />
-
           <Route
-            path="/review"
+            path="/review/:toot_id/"
             element={
               <>
-                <Review />
+                {/* show all reviews */}
+              </>
+            }
+          />
+          <Route
+            path="/review/:toot_id/new"
+            element={
+              <>
+                <CreateReview />
               </>
             }
           />

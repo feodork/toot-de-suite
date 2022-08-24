@@ -5,6 +5,10 @@
   flex-direction: column;
  }
 
+ .colour-nav {
+  background-color: #FFC000;
+ }
+
  .App-logo {
   max-width: 150px;
  }
@@ -21,10 +25,6 @@
   font-size: 20px;
  }
 
- .colour-nav {
-  background-color: #DFC9EA;
-}
-
 .nav-img {
   max-height: 60px;
 }
@@ -32,6 +32,7 @@
 .leaflet-container {
   width: 50vw;
   height: 50vh;
+  display: flex;
 }
 
 

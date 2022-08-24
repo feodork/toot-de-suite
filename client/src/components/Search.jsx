@@ -5,6 +5,7 @@ import PlacesAutocomplete, {
 } from 'react-places-autocomplete';
  
 class LocationSearchInput extends React.Component {
+    
   constructor(props) {
     super(props);
     this.state = { address: '' };
@@ -27,6 +28,7 @@ class LocationSearchInput extends React.Component {
         value={this.state.address}
         onChange={this.handleChange}
         onSelect={this.handleSelect}
+        searchOptions={{componentRestrictions: { country: ['au'] }}}
       >
         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
           <div>

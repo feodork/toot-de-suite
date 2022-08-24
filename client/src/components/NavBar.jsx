@@ -8,23 +8,22 @@ import Navbar from 'react-bootstrap/Navbar';
 
 const NavBar = () => {
     return (
-    <Navbar bg="light" expand="lg" className="colour-nav">
+    <Navbar expand="lg" className="colour-nav">
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
             <img 
             alt="poop emoji logo"
             className="d-inline-block align-top nav-img" 
             src="/poop-emoji.png" 
             />{' '}
-            Toot de Suite
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="home">Home</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="login">Login</Nav.Link>
             <Nav.Link href="logout">Logout</Nav.Link>
-            <Nav.Link href="home">Register</Nav.Link>
+            <Nav.Link href="register">Register</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

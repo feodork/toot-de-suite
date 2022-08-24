@@ -75,13 +75,17 @@ def delete_review(review_id):
 @app.route('/reviews/new', methods=['POST'])
 def new_review():
     text = request.json['text']
+    user = session.get("user", None)
+    if user is None:
+        return jsonify(msg="You must be logged in to leave a review")
+    toot = request.json['toot_id']
     query = """
         INSERT INTO reviews
-        (text, user_id)
-        VALUES (%s, %s)
+        (text, user_id, toot_id)
+        VALUES (%s, %s, %s)
         RETURNING *
     """
-    g.db['cursor'].execute(query, (text, 4))
+    g.db['cursor'].execute(query, (text, user["id"], toot))
     g.db['connection'].commit()
     review = g.db['cursor'].fetchone()
     return jsonify(review)
