@@ -1,8 +1,7 @@
 # Toot de Suite
 Catering to all people, but aiming for inclusivity for those that are gender diverse, people with disabilities, people with health issues and/or parents. 
 
-## Technologi
-es Used
+## Technologies Used
 - Python
 - Flask
 - PostgreSQL
@@ -41,11 +40,17 @@ This app will give me a greater understanding of the above tech stack, whilst al
 ## Toilet User Survey
 I distributed a survey to find out potential user demographics – I wanted to know more about who would use the app and for what purpose.
 Help me learn more by [completing the survey](https://forms.gle/zptdZZzbjsYh63UE7).
-[age ranges, primarily 25-34 years old](https://imgur.com/Qa3MP2w)
-[address, primarily live in suburban areas](https://imgur.com/jzwCGhR)
-[approx 7% of respondents are gender diverse](https://imgur.com/etOQniI)
-[approx 3% of respondents require accessible toilet](https://imgur.com/wWM08Mr)
-[approx 17% of respondents require a parent room or change table](https://imgur.com/dB2mcb7)
+
+![age ranges, primarily 25-34 years old](https://imgur.com/Qa3MP2w)
+
+![address, primarily live in suburban areas](https://imgur.com/jzwCGhR)
+
+![approx 7% of respondents are gender diverse](https://imgur.com/etOQniI)
+
+![approx 3% of respondents require accessible toilet](https://imgur.com/wWM08Mr)
+
+![approx 17% of respondents require a parent room or change table](https://imgur.com/dB2mcb7)
+
 
 ## Data Structures
 ![ERD diagram: data structure, users to reviews to toots](https://imgur.com/a/7KIk9r4)
@@ -56,11 +61,17 @@ Help me learn more by [completing the survey](https://forms.gle/zptdZZzbjsYh63UE
 
 ## Further Reading & Resources
 [Disability language and identities](https://flexforward.pressbooks.com/chapter/disability-language/)
+
 [The Rodney Warmington Churchill Fellowship to increase accessibility to public toilets by researching taboos, design, policy and legal barriers](https://www.churchilltrust.com.au/project/the-rodney-warmington-churchill-fellowship-to-increase-accessibility-to-public-toilets-by-researching-taboos-design-policy-and-legal-barriers/)
+
 [National Public Toilet Map](https://data.gov.au/dataset/ds-dga-553b3049-2b8b-46a2-95e6-640d7986a8c1/details)
+
 [Disability Discrimination Act 1992](https://humanrights.gov.au/our-work/employers/disability-discrimination)
+
 [Flush Toilet Finder](https://apps.apple.com/app/id955254528?fbclid=IwAR2FLIbJcyFjwaP-juY6q7eeiC-s9jM3mdE8txaYJD9H7TCghN4pauXdk5s)
+
 [All Gender Toilets – We just want to go to the toilet!](https://accessinstitute.com.au/all-gender-toilets-we-just-want-to-go-to-the-toilet/)
+
 [Wikicamps Australia App](https://accessinstitute.com.au/all-gender-toilets-we-just-want-to-go-to-the-toilet/)
 
 
