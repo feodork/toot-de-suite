@@ -5,7 +5,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
-const NavBar = ({ handleLogout }) => {
+const NavBar = ({ handleLogout, user }) => {
   return (
     <Navbar expand="lg" className="colour-nav">
       <Container>
@@ -21,9 +21,8 @@ const NavBar = ({ handleLogout }) => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="login">Login</Nav.Link>
-            <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
-            <Nav.Link href="register">Register</Nav.Link>
+              {!user ? <Nav.Link href="register">Register</Nav.Link> : ""}
+              {!user ? <Nav.Link href="login">Login</Nav.Link> : <Nav.Link onClick={handleLogout}>Logout</Nav.Link>}
           </Nav>
         </Navbar.Collapse>
       </Container>

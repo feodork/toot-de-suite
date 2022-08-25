@@ -51,7 +51,7 @@ const App = () => {
   return (
     <div className="App">
       <span>
-        <NavBar handleLogout={handleLogout} />
+        <NavBar handleLogout={handleLogout} user={user}/>
       </span>
       <header className="App-header">
         <Routes>
