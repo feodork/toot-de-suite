@@ -1,4 +1,4 @@
-![poop emoji with smile](https://imgur.com/XkHDozL.png)
+![poop emoji with smile](https://imgur.com/XkHDozL.png | width=100)
 
 # Toot de Suite
 Catering to all people, but aiming for inclusivity for those that are gender diverse, people with disabilities, people with health issues and/or parents. 
