@@ -1,3 +1,5 @@
+![poop emoji with smile](https://imgur.com/undefined.png)
+
 # Toot de Suite
 Catering to all people, but aiming for inclusivity for those that are gender diverse, people with disabilities, people with health issues and/or parents. 
 
@@ -41,25 +43,23 @@ This app will give me a greater understanding of the above tech stack, whilst al
 I distributed a survey to find out potential user demographics – I wanted to know more about who would use the app and for what purpose.
 Help me learn more by [completing the survey](https://forms.gle/zptdZZzbjsYh63UE7).
 
-[Imgur](https://imgur.com/Qa3MP2w)
+![age ranges, primarily 25-34 years old](https://imgur.com/Qa3MP2w.png)
 
-![age ranges, primarily 25-34 years old](https://imgur.com/Qa3MP2w)
+![address, primarily live in suburban areas](https://imgur.com/jzwCGhR.png)
 
-![address, primarily live in suburban areas](https://imgur.com/jzwCGhR)
+![approx 7% of respondents are gender diverse](https://imgur.com/etOQniI.png) 
 
-![approx 7% of respondents are gender diverse](https://imgur.com/etOQniI)
+![approx 3% of respondents require accessible toilet](https://imgur.com/wWM08Mr.png)
 
-![approx 3% of respondents require accessible toilet](https://imgur.com/wWM08Mr)
-
-![approx 17% of respondents require a parent room or change table](https://imgur.com/dB2mcb7)
+![approx 17% of respondents require a parent room or change table](https://imgur.com/dB2mcb7.png)
 
 
 ## Data Structures
-![ERD diagram: data structure, users to reviews to toots](https://imgur.com/a/7KIk9r4)
+![ERD diagram: data structure, users to reviews to toots](https://imgur.com/a/7KIk9r4.png)
 
 
 ## Wireframes
-![wireframes: home, register, login, logout, reviews](https://imgur.com/a/53MpiNH)
+![wireframes: home, register, login, logout, reviews](https://imgur.com/a/53MpiNH.png)
 
 ## Further Reading & Resources
 [Disability language and identities](https://flexforward.pressbooks.com/chapter/disability-language/)
