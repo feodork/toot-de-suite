@@ -3,7 +3,8 @@ import { tooltip } from "leaflet";
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-const ShowReviews = () => {
+const ShowReviews = ({ user }) => {
+  console.log(user, "are we authed?")
   const [toot, setToot] = useState(null);
   const navigate = useNavigate();
   const { toot_id } = useParams();
@@ -41,7 +42,7 @@ const ShowReviews = () => {
             );
           })}
         </div>
-        <button variant="dark">Leave a Review</button>
+        {user ? <a href={"/review/" + toot.toot.id + "/new"}>Leave a review</a> : <a href={"/login"}>Login to leave a review</a>}
       </div>
     </container>
   );
