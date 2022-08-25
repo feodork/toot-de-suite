@@ -1,4 +1,4 @@
-![poop emoji with smile](https://imgur.com/undefined.png)
+![poop emoji with smile](https://imgur.com/XkHDozL.png)
 
 # Toot de Suite
 Catering to all people, but aiming for inclusivity for those that are gender diverse, people with disabilities, people with health issues and/or parents. 
@@ -55,11 +55,11 @@ Help me learn more by [completing the survey](https://forms.gle/zptdZZzbjsYh63UE
 
 
 ## Data Structures
-![ERD diagram: data structure, users to reviews to toots](https://imgur.com/a/7KIk9r4.png)
+![ERD diagram: data structure, users to reviews to toots](https://imgur.com/H169ZsH.png)
 
 
 ## Wireframes
-![wireframes: home, register, login, logout, reviews](https://imgur.com/a/53MpiNH.png)
+![wireframes: home, register, login, logout, reviews](https://i.imgur.com/NJ8kWZt.png)
 
 ## Further Reading & Resources
 [Disability language and identities](https://flexforward.pressbooks.com/chapter/disability-language/)
