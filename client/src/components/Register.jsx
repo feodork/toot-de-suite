@@ -17,7 +17,7 @@ const Register = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    const res = await fetch("/users/register", {
+    const res = await fetch("/register", {
       method: "POST",
       headers: { "Content-Type": "application/json"},
       body: JSON.stringify(fields)
@@ -53,7 +53,7 @@ const Register = (props) => {
             className="form-text"
           />
         </Form.Group><br/>
-        <Button type="submit" variant="light">Register</Button>
+        <Button type="submit" variant="dark">Register</Button>
         <p>Already have an account? <Link to="/login" className="link-text">Login here</Link></p>
       </Form>
     </div>

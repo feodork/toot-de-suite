@@ -2,7 +2,7 @@ import React from 'react'
 
 const Logout = (props) => {
     const handleClick = async () => {
-      const res = await fetch("/users/logout", {
+      const res = await fetch("/logout", {
         method: "POST"
       })
       props.handleLogout()

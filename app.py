@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, session, request, g
 import json
 import click
-from werkzeug.security import generate_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 import psycopg2
 import os
 
@@ -27,19 +27,26 @@ def home():
     reviews = g.db['cursor'].fetchall()
     return (jsonify(reviews))
 
-# GET retrieve single review
-@app.route('/reviews/<review_id>')
-def show_review(review_id):
+# GET retrieve single toot
+@app.route('/toot/<toot_id>')
+def show_toot(toot_id):
     cur = g.db['cursor']
-    query = """
-        SELECT * FROM reviews
+    review_query = """
+        SELECT reviews.text, reviews.date, users.username, reviews.id FROM reviews
         JOIN users ON reviews.user_id = users.id
-        WHERE reviews.id = %s
+        WHERE reviews.toot_id = %s
+        ORDER BY date DESC
+        LIMIT 10
     """
-    cur.execute(query, (review_id,))
-    review = cur.fetchone()
-    print("hello")
-    return jsonify(review)
+    cur.execute(review_query, (toot_id,))
+    reviews = cur.fetchall()
+    toot_query = """
+        SELECT * FROM toots
+    """
+    cur.execute(toot_query, (toot_id,))
+    toot = cur.fetchone()
+
+    return jsonify(reviews=reviews, toot=toot)
 
 # PUT update single review
 @app.route('/reviews/<review_id>', methods=['PUT'])

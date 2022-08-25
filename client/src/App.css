@@ -1,5 +1,6 @@
 html {
   background-color: #FFF9EB;
+  margin: auto;
 }
 
 .App {
@@ -8,7 +9,10 @@ html {
   /* display: flex;
   flex-direction: column; */
   background-color: #FFF9EB;
-  margin: auto;
+ }
+
+ .h1 {
+  padding: 10px;
  }
 
  .colour-nav {
@@ -32,6 +36,8 @@ html {
  
  button {
   flex: 1;
+  padding: 10px;
+  margin: 10px;
  }
  
  span {
@@ -50,5 +56,15 @@ html {
   padding: 10px;
 }
 
+.form-area {
+  width: 70%;
+  height: 50vh;
+  margin: auto;
+  padding: 10px;
+}
 
+.form-control{
+  margin: 10px;
+  padding: 10px;
+}
 

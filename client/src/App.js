@@ -7,7 +7,7 @@ import "./App.css";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import CreateReview from "./components/CreateReview";
-// import ShowReview from "./components/ShowReview";
+import ShowReviews from "./components/ShowReviews";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Logout from "./components/Logout";
@@ -15,6 +15,9 @@ import Logout from "./components/Logout";
 
 const App = () => {
   const [user, setUser] = useState(null)
+  console.log({user})
+
+  let navigate = useNavigate();
 
   useEffect(() => {
     const checkLoggedIn = async () => {
@@ -25,12 +28,18 @@ const App = () => {
     if (!user) checkLoggedIn()
   }, [])
 
+  const handleLogin = (user) => {
+    setUser(user)
+    navigate("/")
+  }
+
   const handleLogout = async () => {
     const res = await fetch('/logout', {
       method: 'POST'
     })
     const data = await res.json()
     if (data.success) setUser(null)
+    navigate("/")
   }
   
   return (
@@ -45,7 +54,6 @@ const App = () => {
             element={
               <>
                 <Home />
-                <Register  />
               </>
             }
           />
@@ -54,7 +62,7 @@ const App = () => {
             path="/login"
             element={
               <>
-                <Login />
+                <Login handleLogin={handleLogin}/>
               </>
             }
           />
@@ -71,7 +79,7 @@ const App = () => {
             path="/review/:toot_id/"
             element={
               <>
-                {/* show all reviews */}
+                <ShowReviews />
               </>
             }
           />
