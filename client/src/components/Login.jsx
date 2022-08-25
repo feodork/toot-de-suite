@@ -1,30 +1,29 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 const Login = ({ handleLogin }) => {
-  const [fields, setFields] = useState({ username: '', password: '' })
+  const [fields, setFields] = useState({ username: "", password: "" });
 
-  const handleChange = (event) => { 
+  const handleChange = (event) => {
     setFields({
       ...fields,
-      [event.target.name]: event.target.value
-    })
-  }
+      [event.target.name]: event.target.value,
+    });
+  };
 
   const handleSubmit = async (event) => {
-    event.preventDefault()
+    event.preventDefault();
     const res = await fetch("/login", {
       method: "POST",
-      headers: { "Content-Type": "application/json"},
-      body: JSON.stringify(fields)
-    })
-    const data = await res.json()
-    console.log(data.success)
-    handleLogin(data.user)
-  }
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(fields),
+    });
+    const data = await res.json();
+    console.log(data.success);
+    handleLogin(data.user);
+  };
 
   return (
     <div className="container register">
@@ -51,12 +50,20 @@ const Login = ({ handleLogin }) => {
             id="password"
             className="form-text"
           />
-        </Form.Group><br/>
-      <Button type="submit" value="Login" variant="dark">Login</Button>
-      <p>No account yet? <Link to="/register" className="link-text">Register here</Link></p>
-    </Form>
+        </Form.Group>
+        <br />
+        <Button type="submit" value="Login" variant="dark">
+          Login
+        </Button>
+        <p>
+          No account yet?{" "}
+          <Link to="/register" className="link-text">
+            Register here
+          </Link>
+        </p>
+      </Form>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

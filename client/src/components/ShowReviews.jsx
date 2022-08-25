@@ -1,3 +1,4 @@
+import { Button } from "bootstrap";
 import { tooltip } from "leaflet";
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
@@ -40,6 +41,7 @@ const ShowReviews = () => {
             );
           })}
         </div>
+        <button variant="dark">Leave a Review</button>
       </div>
     </container>
   );
