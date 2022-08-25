@@ -41,6 +41,8 @@ This app will give me a greater understanding of the above tech stack, whilst al
 I distributed a survey to find out potential user demographics – I wanted to know more about who would use the app and for what purpose.
 Help me learn more by [completing the survey](https://forms.gle/zptdZZzbjsYh63UE7).
 
+[Imgur](https://imgur.com/Qa3MP2w)
+
 ![age ranges, primarily 25-34 years old](https://imgur.com/Qa3MP2w)
 
 ![address, primarily live in suburban areas](https://imgur.com/jzwCGhR)
