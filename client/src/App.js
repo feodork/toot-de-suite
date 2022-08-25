@@ -28,12 +28,6 @@ const App = () => {
     if (!user) checkLoggedIn()
   }, [])
 
-  // const userAuthed = (user) => {
-  //   if (user == null) {return false}
-  //   else {return true}
-  // }
-  // console.log(userAuthed, "this is the new thing")
-
   const handleLogin = (user) => {
     setUser(user)
     navigate("/")
@@ -47,6 +41,8 @@ const App = () => {
     if (data.success) setUser(null)
     navigate("/")
   }
+
+
   
   return (
     <div className="App">
@@ -85,7 +81,7 @@ const App = () => {
             path="/review/:toot_id/"
             element={
               <>
-                <ShowReviews user={user}/>
+                <ShowReviews user={user} />
               </>
             }
           />

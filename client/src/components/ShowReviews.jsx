@@ -1,9 +1,8 @@
-import { Button } from "bootstrap";
-import { tooltip } from "leaflet";
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 
-const ShowReviews = ({ user }) => {
+const ShowReviews = ({ user, handleDelete }) => {
   console.log(user, "are we authed?")
   const [toot, setToot] = useState(null);
   const navigate = useNavigate();
@@ -37,6 +36,8 @@ const ShowReviews = ({ user }) => {
                   {review.username} on {review.date}
                 </div>
                 <p>{review.text}</p>
+                <Button variant="dark">Edit review</Button>
+                <Button variant="dark" onClick={handleDelete}>Delete review</Button>
               </div>
             );
           })}
