@@ -23,8 +23,7 @@ const ShowReviews = ({ user }) => {
   return !toot ? (
     "loading"
   ) : (
-    <container>
-      <div>
+      <div className="show-review">
         <h1>{toot.toot.toilet_name}</h1>
         <div>
           {toot.toot.address1}, {toot.toot.town} {toot.toot.state}
@@ -44,7 +43,6 @@ const ShowReviews = ({ user }) => {
         </div>
         {user ? <a href={"/review/" + toot.toot.id + "/new"}>Leave a review</a> : <a href={"/login"}>Login to leave a review</a>}
       </div>
-    </container>
   );
 };
 

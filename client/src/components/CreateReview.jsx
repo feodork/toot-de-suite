@@ -22,7 +22,7 @@ const CreateReview = () => {
     navigate(`/review/${toot_id}`);
   };
   return (
-    <div className="form-area">
+    <div className="leave-review">
       <h1>Review</h1>
       <Form onSubmit={onSubmit}>
         <Form.Group className="mb-3" controlId="controlTextarea">
@@ -30,7 +30,7 @@ const CreateReview = () => {
           <Form.Control
             value={text}
             onChange={handleChange}
-            type="text"
+            as="textarea"
             id="text"
             name="text"
             placeholder="Leave a review"
