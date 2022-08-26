@@ -42,6 +42,7 @@ def show_toot(toot_id):
     reviews = cur.fetchall()
     toot_query = """
         SELECT * FROM toots
+        WHERE id = %s
     """
     cur.execute(toot_query, (toot_id,))
     toot = cur.fetchone()
